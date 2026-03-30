@@ -42,7 +42,7 @@ def q1():
     num2 = int(input("Digite o segundo número: "))
     soma = num1 + num2
     if soma > 10:
-    print("Resultado da soma:", soma)
+    print("Resultado da soma:" soma )
     
 #2. Faça um programa que leia dois valores inteiros e efetue a adição.
 #   Caso o valor somado seja maior que 20, este deverá ser apresentado
@@ -60,41 +60,133 @@ def q2():
 
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
+def q03():
+    numero = int(input("Digite um número: "))
+if numero % 3 == 0:
+    print("É múltiplo de 3")
+else:
+    print("Não é múltiplo de 3")
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
+def q04():
+    numero = int(input("Digite um número: "))
+if numero % 5 == 0:
+    print("É divisível por 5")
+else:
+    print("Não é divisível por 5")
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
+def q05():
+    numero = int(input("Digite um número: "))
+if numero % 3 == 0 and numero % 7 == 0:
+    print("É divisível por 3 e por 7")
+else:
+    print("Não é divisível por 3 e por 7")
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
+def q06():
+    salario = float(input("Digite o salário bruto: "))
+prestacao = float(input("Digite o valor da prestação: "))
+limite = salario * 0.30
+if prestacao <= limite:
+    print("Empréstimo pode ser concedido")
+else:
+    print("Empréstimo não pode ser concedido")
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
+def q07():
+    numero = float(input("Digite um número: "))
+if 20 <= numero <= 50:
+    print("O número está entre 20 e 50")
+else:
+    print("O número não está entre 20 e 50")
 
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+def q08():
+    numero = float(input("Digite um número: "))
+if numero > 20:
+    print("Maior do que 20")
+elif numero == 20:
+    print("Igual a 20")
+else:
+    print("Menor do que 20")
 
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
+def q09():
+    ano_nascimento = int(input("Digite o ano de nascimento: "))
+ano_atual = int(input("Digite o ano atual: "))
+if ano_nascimento > ano_atual:
+    print("Ano de nascimento inválido")
+elif ano_nascimento <= 0:
+    print("Ano de nascimento inválido")
+else:
+    idade = ano_atual - ano_nascimento
+    print("Idade:", idade)
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
+def q10():
+    a = int(input("Digite o primeiro número: "))
+b = int(input("Digite o segundo número: "))
+c = int(input("Digite o terceiro número: "))
+numeros = [a, b, c]
+numeros.sort()
+print("Números em ordem crescente:", numeros)
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
+def q11():
+    n1 = float(input("Digite o primeiro número: "))
+n2 = float(input("Digite o segundo número: "))
+n3 = float(input("Digite o terceiro número: "))
+maior = n1
+if n2 > maior:
+    maior = n2
+
+if n3 > maior:
+    maior = n3
+print("O maior número é:", maior)
 
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
 #• Se é menor de idade
 #• Se é maior de 65 anos
+def q12():
+    idade = int(input("Digite a idade: "))
+if idade >= 65:
+    print("Maior de 65 anos")
+elif idade >= 18:
+    print("Maior de idade")
+else:
+    print("Menor de idade")
 
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
 #reprovação e as demais em prova final).
+def q13():
+    def q13():
+    nome = input("Digite o nome do aluno: ")
+    n1 = float(input("Digite a nota da prova 1: "))
+    n2 = float(input("Digite a nota da prova 2: "))
+    media = (n1 + n2) / 2
+    print("Nome:", nome)
+    print("Nota 1:", n1)
+    print("Nota 2:", n2)
+    print("Média:", media)
+    if media >= 7:
+        print("Aprovado")
+    elif media < 3:
+        print("Reprovado")
+    else:
+        print("Em Prova Final")
 
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
@@ -103,10 +195,31 @@ def q2():
 #Maior que R$600,00 e menor ou igual a R$1200,00 20%
 #Maior que R$1200,00 e menor ou igual a R$2000,00 25%
 #Maior que R$2000,00 30%
+def q14():
+    salario = float(input("Digite o salário: "))
+if salario <= 600:
+    desconto = 0
+elif salario <= 1200:
+    desconto = salario * 0.20
+elif salario <= 2000:
+    desconto = salario * 0.25
+else:
+    desconto = salario * 0.30
+print("Salário:", salario)
+print("Desconto do INSS:", desconto)
+print("Salário com desconto:", salario - desconto)
 
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
 #Faça um programa que leia o valor do produto e imprima o valor da venda.
+def q15():
+valor = float(input("Digite o valor do produto: "))
+if valor < 20:
+    venda = valor * 1.45
+else:
+    venda = valor * 1.30
+print("Valor de compra:", valor)
+print("Valor de venda:", venda)
 
 #16. A confederação brasileira de natação irá promover eliminatórias para o
 #próximo mundial. Faça um programa que receba a idade de um nadador e imprima
