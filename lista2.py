@@ -412,12 +412,103 @@ else:
 #Peixe          230cal Sorvete diet     110cal Suco de laranja   70cal
 #Frango         250cal Mousse diet      170cal Suco de melão     100cal
 #Carne          350cal Mousse chocolate 200cal Refrigerante diet 65cal
+def q23():
+    print("Escolha o prato:")
+print("1 - Vegetariano (180 cal)")
+print("2 - Peixe (230 cal)")
+print("3 - Frango (250 cal)")
+print("4 - Carne (350 cal)")
+prato = int(input("Opção: "))
+
+print("\nEscolha a sobremesa:")
+print("1 - Abacaxi (75 cal)")
+print("2 - Sorvete diet (110 cal)")
+print("3 - Mousse diet (170 cal)")
+print("4 - Mousse chocolate (200 cal)")
+sobremesa = int(input("Opção: "))
+
+print("\nEscolha a bebida:")
+print("1 - Chá (20 cal)")
+print("2 - Suco de laranja (70 cal)")
+print("3 - Suco de melão (100 cal)")
+print("4 - Refrigerante diet (65 cal)")
+bebida = int(input("Opção: "))
+
+# Calorias do prato
+if prato == 1:
+    cal_prato = 180
+elif prato == 2:
+    cal_prato = 230
+elif prato == 3:
+    cal_prato = 250
+elif prato == 4:
+    cal_prato = 350
+else:
+    cal_prato = 0
+
+# Calorias da sobremesa
+if sobremesa == 1:
+    cal_sobremesa = 75
+elif sobremesa == 2:
+    cal_sobremesa = 110
+elif sobremesa == 3:
+    cal_sobremesa = 170
+elif sobremesa == 4:
+    cal_sobremesa = 200
+else:
+    cal_sobremesa = 0
+
+# Calorias da bebida
+if bebida == 1:
+    cal_bebida = 20
+elif bebida == 2:
+    cal_bebida = 70
+elif bebida == 3:
+    cal_bebida = 100
+elif bebida == 4:
+    cal_bebida = 65
+else:
+    cal_bebida = 0
+
+total = cal_prato + cal_sobremesa + cal_bebida
+
+print(f"\nTotal de calorias da refeição: {total} cal")
 
 #24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para
 #cobrar dos motoristas o DUT. Sabendo-se que o mês em que o emplacamento do
 #carro deve ser renovado é determinado pelo último número da placa do mesmo,
 #faça um programa que, a partir da leitura da placa do carro, informe o mês
 #em que o emplacamento deve ser renovado.
+def q24():
+    placa = input("Digite a placa do carro: ")
+# Pegando o último caractere da placa
+final = placa[-1]
+if final == "1":
+    mes = "Janeiro"
+elif final == "2":
+    mes = "Fevereiro"
+elif final == "3":
+    mes = "Março"
+elif final == "4":
+    mes = "Abril"
+elif final == "5":
+    mes = "Maio"
+elif final == "6":
+    mes = "Junho"
+elif final == "7":
+    mes = "Julho"
+elif final == "8":
+    mes = "Agosto"
+elif final == "9":
+    mes = "Setembro"
+elif final == "0":
+    mes = "Outubro"
+else:
+    mes = None
+if mes:
+    print(f"Mês de renovação: {mes}")
+else:
+    print("Placa inválida")
 
 #25. A prefeitura contratou uma firma especializada para manter os níveis de
 #poluição considerados ideais para um país do 1º mundo. As indústrias,
@@ -429,6 +520,19 @@ else:
 #0,3 1º grupo
 #0,4 1º e 2º grupos
 #0,5 1º, 2º e 3º grupos
+def q25():
+    indice = float(input("Digite o índice de poluição: "))
+if indice < 0.05 or indice > 0.5:
+    print("Índice fora da escala válida (0,05 a 0,5)")
+elif indice <= 0.25:
+    print("Níveis de poluição dentro do aceitável")
+elif indice >= 0.5:
+    print("Intimar indústrias do 1º, 2º e 3º grupos")
+elif indice >= 0.4:
+    print("Intimar indústrias do 1º e 2º grupos")
+elif indice >= 0.3:
+    print("Intimar indústrias do 1º grupo")
+
 
 try:
     opcao = int(input('Digite o número da questão: '))
